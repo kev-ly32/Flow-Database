@@ -36,7 +36,7 @@ passport.deserializeUser(User.deserializeUser())
 
 //check if app is being served as a production build
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('employee-database/build'))
+    app.use(express.static('./employee-database/build'))
 }
 
 //DASHBOARD ROUTES
