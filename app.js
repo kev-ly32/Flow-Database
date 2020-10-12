@@ -7,7 +7,7 @@ const express = require("express"),
     session = require("express-session"),
     User = require('./models/User'),
     Employee = require("./models/Employees"),
-    path = require('path')
+    path = require('path'),
     port = process.env.PORT || 5000;
 
 //load config
@@ -21,16 +21,12 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
 //check if app is being served as a production build
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('employee-database/build'))
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, "./employee-database", "build", "index.html"))
-    })
-}
+app.use(express.static(path.join(__dirname, 'employee-database', "build")))
+
 
 //Configure passport
 app.use(session({
-    secret: 'yum yum yum',
+    secret: process.env.SECRET || "my foot is stuck in the sink",
     resave: false,
     saveUninitialized: false,
 }))
@@ -119,6 +115,10 @@ app.post('/login', (req, res, next) => {
 app.get('/logout', (req, res) => {
     req.logout()
     res.json({success: 'User logged out'})
+})
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "employee-database", "build", "index,html"))
 })
 
 app.listen(port, () => console.log(`App listening on port ${port}`))
