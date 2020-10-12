@@ -1,5 +1,3 @@
-const { populate } = require("./models/User");
-
 const express = require("express"),
     app = express(),
     dotenv = require("dotenv"),
@@ -9,6 +7,7 @@ const express = require("express"),
     session = require("express-session"),
     User = require('./models/User'),
     Employee = require("./models/Employees"),
+    path = require('path')
     port = process.env.PORT || 5000;
 
 //load config
@@ -23,7 +22,10 @@ app.use(express.json())
 
 //check if app is being served as a production build
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('./employee-database/build'))
+    app.use(express.static('employee-database/build'))
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, "./employee-database", "build", "index.html"))
+    })
 }
 
 //Configure passport
