@@ -1,0 +1,354 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  border: none;
+}
+
+html,
+body,
+#root,
+.App,
+.container,
+.landingPage {
+  height: 100%;
+}
+
+/*======================== LANDING PAGE STYLES ======================== */
+
+.wave {
+  height: 30%;
+  z-index: -1;
+}
+
+.waveBottom {
+  position: relative;
+}
+
+.waveBottom img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+}
+
+.landing,
+.landingText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+button {
+  box-shadow: 1px 1px 2px 0px #b1b1b1;
+}
+
+.loginRegister {
+  font-size: 0.75rem;
+  margin-top: 10px;
+  width: 15%;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.loginRegister:hover {
+  background: #bfa6a2;
+}
+
+.landingButtons {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+}
+
+.landingButton {
+  margin-top: 7%;
+  width: 40%;
+  cursor: pointer;
+  font-size: 1.25rem;
+  border-radius: 20px;
+  height: 40px;
+  background: rgb(223, 223, 223);
+}
+
+button:focus {
+  outline: none;
+}
+
+.landingButton:hover {
+  background: #000d59;
+  color: white;
+}
+
+form {
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.form-header {
+  margin: 5% 0 1% 0;
+}
+
+.inputs {
+  margin-bottom: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  justify-content: space-around;
+}
+
+input {
+  margin: 5px 0;
+  height: 45%;
+  border: 1px solid rgb(194, 194, 194);
+  font-size: 1.15rem;
+  padding: 0 10px;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 1px 1px;
+}
+
+.form-row {
+  width: 80%;
+  display: flex;
+  margin-bottom: 17px;
+  /* justify-content: space-around; */
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+label {
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.form-input {
+  width: 90%;
+  font-size: 15px;
+  height: 35px;
+}
+
+.role-input {
+  width: 95%;
+}
+
+.form-item {
+  width: 100%;
+}
+
+/* #date {
+  width: 98%;
+} */
+/*======================== END LANDING PAGE STYLES ======================== */
+
+/* ======================= NAVBAR STYLES ============================ */
+
+header {
+  display: flex;
+}
+
+.header-item {
+  flex: 1;
+}
+
+/* ======================= END NAVBAR STYLES ============================ */
+
+/* ========================= SIDEBAR STYLES =============================== */
+.fa-bars {
+  padding: 1% 1%;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.fa-bars:hover {
+  color: #bfa6a2;
+}
+
+.sidebar-welcome {
+  padding-bottom: 20px;
+  /* margin-bottom: 10px; */
+  padding-left: 5px;
+  font-weight: 500;
+  flex: 9;
+}
+
+.sidebar-header {
+  display: flex;
+  border-bottom: 1px solid gray;
+}
+
+.sidebar-icon {
+  display: flex;
+  justify-content: flex-end;
+  font-size: x-large;
+  flex: 1;
+  height: 26px;
+}
+
+.sidebar-icon:hover {
+  color: #ad2d2d;
+  cursor: pointer;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 5px;
+}
+
+.nav-item:hover {
+  background: #3345ac;
+}
+
+.nav-logout {
+  text-decoration: none;
+}
+
+.logout {
+  color: #a02929;
+  width: 100%;
+  margin-top: 30%;
+}
+
+.logout:hover {
+  background: rgb(228, 180, 180);
+}
+/* ======================= END SIDEBAR STYLES =========================== */
+
+/* ======================= DASHBOARD STYLES ============================ */
+.dashboard-container {
+  height: 100%;
+}
+
+.dashboard-page {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  transition: left 0.3s ease-in-out;
+  flex: 1;
+  padding: 1% 1%;
+  background: #010c49;
+  color: rgb(255, 255, 255);
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+  padding: 1% 1%;
+}
+
+.functions,
+.employee-form {
+  display: flex;
+}
+
+#searchbar {
+  width: 30%;
+  margin: 0 auto;
+  height: 30px;
+  font-size: 1rem;
+}
+
+#add,
+#cancel,
+.add-update {
+  border-radius: 20px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  width: 60px;
+  font-size: large;
+}
+
+#add {
+  background: #fdb051;
+}
+
+#cancel {
+  background: #781f1f;
+}
+
+#cancel:hover {
+  background: #420000;
+}
+
+.add-update {
+  background: #fdb051;
+  width: 80px;
+}
+
+#add:hover,
+.add-update:hover {
+  background: #c0853c;
+}
+
+.edit,
+.delete {
+  cursor: pointer;
+  background: none;
+  box-shadow: none;
+}
+
+.edit:hover {
+  color: #b9803a;
+}
+
+.delete:hover {
+  color: #ad2d2d;
+}
+
+.employee-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50%;
+  width: 60%;
+  margin: 5% auto 0 auto;
+  box-shadow: 1px 1px 5px 0px #b1b1b1;
+}
+/* ======================= END DASHBOARD STYLES ============================ */
+
+table {
+  width: 100%;
+  margin-top: 4%;
+  border-spacing: 0;
+}
+
+th {
+  text-align: left;
+  padding-bottom: 2%;
+  padding-left: 10px;
+  font-size: larger;
+}
+
+td {
+  padding: 1% 0 1% 10px;
+  border-spacing: none;
+}
+
+.employee:hover {
+  background: rgb(173, 200, 230);
+}
