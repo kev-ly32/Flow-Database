@@ -21,6 +21,11 @@ connectDB()
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
+//check if app is being served as a production build
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('./employee-database/build'))
+}
+
 //Configure passport
 app.use(session({
     secret: 'yum yum yum',
@@ -34,10 +39,7 @@ passport.use(new LocalStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
-//check if app is being served as a production build
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('./employee-database/build'))
-}
+
 
 //DASHBOARD ROUTES
 app.get('/dashboard', (req, res) => {
