@@ -118,7 +118,7 @@ app.get('/logout', (req, res) => {
 })
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "employee-database", "build", "index,html"))
+    res.sendFile(path.join(__dirname, "employee-database", "build", "index.html"))
 })
 
 app.listen(port, () => console.log(`App listening on port ${port}`))
