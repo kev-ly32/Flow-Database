@@ -38,7 +38,7 @@ const Dashboard = ({setLoggedIn, setCurrentUser, currentUser}) => {
 
   //GET ALL EMPLOYEES
   const getEmployees = async () => {
-    const response = await fetch("/dashboard");
+    const response = await fetch("/allusers");
     const data = await response.json();
 
     setEmployees(data);

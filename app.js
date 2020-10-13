@@ -20,7 +20,7 @@ connectDB()
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
-//check if app is being served as a production build
+//serve production build of app
 app.use(express.static(path.join(__dirname, 'employee-database', "build")))
 
 
@@ -40,7 +40,7 @@ passport.deserializeUser(User.deserializeUser())
 
 
 //DASHBOARD ROUTES
-app.get('/dashboard', (req, res) => {
+app.get('/allusers', (req, res) => {
     Employee.find({}, (err, employees) => {
         if(err){
             req.json({error: 'Cannot find employees'})
