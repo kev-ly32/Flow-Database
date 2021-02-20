@@ -1,25 +1,26 @@
-import React, {useEffect, useState} from 'react';
-import '../public/stylesheets/App.css';
-import Landing from './Landing'
-import Dashboard from './Dashboard'
+import React, { useEffect, useState } from "react";
+import "../public/stylesheets/App.css";
+import Landing from "./Landing";
+import Dashboard from "./Dashboard";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
-} from 'react-router-dom'
+  Redirect,
+} from "react-router-dom";
 
 function App() {
-const [loggedIn, setLoggedIn] = useState(false)
-const [currentUser, setCurrentUser] = useState('')
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState("");
 
-useEffect(() => {
-  const loggedInUser = JSON.parse(localStorage.getItem('user'))
-  if(loggedInUser) {
-    setCurrentUser(loggedInUser.username)
-    setLoggedIn(true)
-  }
-}, [])
+  useEffect(() => {
+    const loggedInUser = JSON.parse(localStorage.getItem("user"));
+    console.log(loggedInUser);
+    if (loggedInUser) {
+      setCurrentUser(loggedInUser.username);
+      setLoggedIn(true);
+    }
+  }, []);
 
   return (
     <Router>
